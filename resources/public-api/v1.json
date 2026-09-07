@@ -1,0 +1,188 @@
+{
+    "schema": "kumwe-public-api/v1",
+    "package": "kumwe/record-values",
+    "release": null,
+    "namespace": "Kumwe\\Record\\Value\\",
+    "symbols": [
+        {
+            "name": "Kumwe\\Record\\Value\\ClientAssertedInstant",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "capturedAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "fromPortableString",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Record\\Value\\ClientAssertedInstant"
+                },
+                {
+                    "name": "toPortableString",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "capturedAt",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "INSTANT_FORMAT"
+            ]
+        },
+        {
+            "name": "Kumwe\\Record\\Value\\ProtectedRecordValue",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "storage",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "toStorage",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Value\\RecordValueGuard",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "assertValue",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "mixed",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "depth",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "nodes",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": true
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "canonical",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "mixed",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "mixed"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Record\\Value\\ZonedDateTimeValue",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "fromStrings",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "instant",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "timezone",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Record\\Value\\ZonedDateTimeValue"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "instant",
+                    "type": "DateTimeImmutable",
+                    "readonly": true
+                },
+                {
+                    "name": "timezone",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        }
+    ]
+}

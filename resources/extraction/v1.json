@@ -1,0 +1,26 @@
+{
+  "schema": "kumwe-extraction/v1",
+  "package": "kumwe/record-values",
+  "source_baselines": {
+    "app": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "sdk": "e8ec23f155c5836c6bd083f154a8efb6e50aec66"
+  },
+  "symbols": [
+    {
+      "owner": "app",
+      "source": "src/BusinessRecord/Domain/RecordValueGuard.php",
+      "target": "src/RecordValueGuard.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessRecord/Domain/ClientAssertedInstant.php",
+      "target": "src/ClientAssertedInstant.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessRecord/Value/ZonedDateTimeValue.php",
+      "target": "src/ZonedDateTimeValue.php"
+    }
+  ],
+  "release_blocked": true
+}
