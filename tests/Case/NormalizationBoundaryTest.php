@@ -27,11 +27,13 @@ final class NormalizationBoundaryTest extends TestCase
             InvalidArgumentException::class,
             'Reject float.'
         );
-        $this->assertThrows(
-            static fn () => RecordValueGuard::canonical("\xff"),
-            InvalidArgumentException::class,
-            'Reject invalid UTF-8.'
+        $this->assertSame(
+            "\xff",
+            RecordValueGuard::canonical("\xff"),
+            'General values preserve original PHP byte strings; JSON transport validates encoding.'
         );
+        $wide = [str_repeat('k', 4097) => str_repeat('v', 1_048_577), "\xff" => 'byte-key'];
+        $this->assertSame($wide, RecordValueGuard::canonical($wide), 'Field codecs own text and key size admission.');
     }
 
     public function testCanonicalCallEnforcesWholeTreeBudget(): void
@@ -97,6 +99,22 @@ final class NormalizationBoundaryTest extends TestCase
             static fn () => new ProtectedRecordValue(['payload' => 1.5]),
             InvalidArgumentException::class,
             'Floats cannot cross protected storage.'
+        );
+        foreach (
+            [['payload' => "\xff"], ["\xff" => 'value'], ['payload' => str_repeat('v', 1_048_577)],
+             [str_repeat('k', 4097) => 'value']] as $invalid
+        ) {
+            $this->assertThrows(
+                static fn () => new ProtectedRecordValue($invalid),
+                InvalidArgumentException::class,
+                'The new protected storage marker owns bounded valid JSON text.'
+            );
+        }
+        $boundary = [str_repeat('k', 4096) => str_repeat('v', 1_048_576)];
+        $this->assertSame(
+            $boundary,
+            (new ProtectedRecordValue($boundary))->toStorage(),
+            'Inclusive storage text bounds.'
         );
     }
 

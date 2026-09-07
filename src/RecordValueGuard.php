@@ -56,9 +56,6 @@ final class RecordValueGuard
         if ($depth > 8 || $nodes > 4096) {
             throw new InvalidArgumentException('A business-record value exceeds its structural bounds.');
         }
-        if (is_string($value) && (strlen($value) > 1048576 || preg_match('//u', $value) !== 1)) {
-            throw new InvalidArgumentException('A business-record string must be bounded valid UTF-8.');
-        }
         if (is_float($value)) {
             throw new InvalidArgumentException('Business-record values cannot contain PHP floats.');
         }
@@ -75,9 +72,6 @@ final class RecordValueGuard
         }
         if (is_array($value)) {
             foreach ($value as $key => $item) {
-                if (is_string($key) && (strlen($key) > 4096 || preg_match('//u', $key) !== 1)) {
-                    throw new InvalidArgumentException('A business-record map key must be bounded valid UTF-8.');
-                }
                 self::assertValue($item, $depth + 1, $nodes);
             }
             return;

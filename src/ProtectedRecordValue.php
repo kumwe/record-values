@@ -63,9 +63,14 @@ final readonly class ProtectedRecordValue
         if ($depth > 8) {
             throw new \InvalidArgumentException('Protected record storage exceeds its depth bound.');
         }
-        foreach ($storage as $value) {
+        foreach ($storage as $key => $value) {
+            if (is_string($key) && (strlen($key) > 4096 || preg_match('//u', $key) !== 1)) {
+                throw new \InvalidArgumentException('Protected storage keys must be bounded valid UTF-8.');
+            }
             if (is_array($value)) {
                 $this->assertOpaque($value, $depth + 1);
+            } elseif (is_string($value) && (strlen($value) > 1_048_576 || preg_match('//u', $value) !== 1)) {
+                throw new \InvalidArgumentException('Protected storage strings must be bounded valid UTF-8.');
             } elseif (!is_null($value) && !is_bool($value) && !is_int($value) && !is_string($value)) {
                 throw new \InvalidArgumentException('Protected record storage accepts JSON values only.');
             }
