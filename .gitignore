@@ -2,3 +2,5 @@
 /.phpunit.cache/
 /.phpstan-cache/
 /dist/
+/composer.candidate.json
+/composer.candidate.lock

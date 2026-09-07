@@ -111,4 +111,4 @@ if ($failures !== []) {
     exit(1);
 }
 
-echo "Extension SDK suite passed: {$totalTests} tests, {$totalAssertions} assertions.\n";
+echo "Record Values suite passed: {$totalTests} tests, {$totalAssertions} assertions.\n";

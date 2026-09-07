@@ -1,0 +1,33 @@
+{
+  "schema": "kumwe-test-ownership/v1",
+  "package": "kumwe/record-values",
+  "tests": [
+    {
+      "path": "tests/Case/NormalizationBoundaryTest.php",
+      "methods": [
+        "testExactNumbersNullAndCanonicalMapOrder",
+        "testCanonicalCallEnforcesWholeTreeBudget",
+        "testProtectedStorageAdapterPreservesExactRepresentation",
+        "testProtectedStorageCannotBypassAggregateStorageBounds",
+        "testProtectedStorageDoesNotRetainCallerReferences",
+        "testClientCaptureRejectsCalendarCoercionAndKeepsUtcPrecision"
+      ],
+      "implementation_owner": "kumwe/record-values"
+    },
+    {
+      "path": "tests/Case/ZonedDateTimeValueTest.php",
+      "methods": [
+        "testCanonicalExportRoundTripsAtPortableAndFractionalBoundaries",
+        "testSilentCalendarRepairAndOffsetOnlyZonesAreRefused"
+      ],
+      "implementation_owner": "kumwe/record-values"
+    }
+  ],
+  "app_retains": [
+    "authorization and generation pinning",
+    "policy-before-query and SQL",
+    "persistence and transaction atomicity",
+    "delivery, export and operational recovery"
+  ],
+  "remove_duplicates_only_after_verified_adoption": true
+}

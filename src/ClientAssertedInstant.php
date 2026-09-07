@@ -113,7 +113,10 @@ final readonly class ClientAssertedInstant
         }
         $parsed = date_create_immutable($value);
         $errors = DateTimeImmutable::getLastErrors();
-        if ($parsed === false || ($errors !== false && ($errors['warning_count'] !== 0 || $errors['error_count'] !== 0))) {
+        if (
+            $parsed === false
+            || ($errors !== false && ($errors['warning_count'] !== 0 || $errors['error_count'] !== 0))
+        ) {
             throw new InvalidArgumentException('A client-asserted capture instant must be an RFC 3339 instant.');
         }
 
