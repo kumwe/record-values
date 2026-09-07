@@ -101,7 +101,7 @@ final class NormalizationBoundaryTest extends TestCase
             'Floats cannot cross protected storage.'
         );
         foreach (
-            [['payload' => "\xff"], ["\xff" => 'value'], ['payload' => str_repeat('v', 1_048_577)],
+            [['payload' => "\xff"], ["\xff" => 'value'], ['payload' => str_repeat('v', 1_398_105)],
              [str_repeat('k', 4097) => 'value']] as $invalid
         ) {
             $this->assertThrows(
@@ -110,11 +110,22 @@ final class NormalizationBoundaryTest extends TestCase
                 'The new protected storage marker owns bounded valid JSON text.'
             );
         }
-        $boundary = [str_repeat('k', 4096) => str_repeat('v', 1_048_576)];
+        $boundary = [str_repeat('k', 4096) => str_repeat('v', 1_398_104)];
         $this->assertSame(
             $boundary,
             (new ProtectedRecordValue($boundary))->toStorage(),
             'Inclusive storage text bounds.'
+        );
+        $maximumEnvelope = [
+            'ciphertext' => base64_encode(str_repeat('x', 1_048_576)),
+            'nonce' => base64_encode(str_repeat('n', 24)),
+            'key_id' => 'fixture-key',
+            'algorithm' => 'xchacha20poly1305-ietf',
+        ];
+        $this->assertSame(
+            $maximumEnvelope,
+            RecordValueGuard::canonical(new ProtectedRecordValue($maximumEnvelope)),
+            'Every byte of the original maximum App envelope remains admissible.'
         );
     }
 

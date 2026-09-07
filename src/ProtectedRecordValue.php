@@ -29,6 +29,7 @@ final readonly class ProtectedRecordValue
         RecordValueGuard::assertValue($storage);
         $this->assertOpaque($storage);
         $detached = [];
+        // A maximum one-mebibyte App ciphertext expands to 1,398,104 base64 characters.
         foreach ($storage as $key => $value) {
             if (!is_string($key)) {
                 throw new \InvalidArgumentException('Protected record storage requires string keys.');
@@ -69,7 +70,7 @@ final readonly class ProtectedRecordValue
             }
             if (is_array($value)) {
                 $this->assertOpaque($value, $depth + 1);
-            } elseif (is_string($value) && (strlen($value) > 1_048_576 || preg_match('//u', $value) !== 1)) {
+            } elseif (is_string($value) && (strlen($value) > 1_398_104 || preg_match('//u', $value) !== 1)) {
                 throw new \InvalidArgumentException('Protected storage strings must be bounded valid UTF-8.');
             } elseif (!is_null($value) && !is_bool($value) && !is_int($value) && !is_string($value)) {
                 throw new \InvalidArgumentException('Protected record storage accepts JSON values only.');
