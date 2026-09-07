@@ -4,24 +4,30 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1990603b1f7948a235a45cd6fce16002",
+    "content-hash": "a1743cff7d196ee0cc65927420d39e03",
     "packages": [
         {
             "name": "kumwe/conversion",
-            "version": "v0.1.0",
+            "version": "v0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kumwe/conversion.git",
-                "reference": "b1ae15e3ccddaffe709e01d20bf59a9e8a14714d"
+                "reference": "e95d5633722929e77b73005f8c44cfe4d99ac8c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kumwe/conversion/zipball/b1ae15e3ccddaffe709e01d20bf59a9e8a14714d",
-                "reference": "b1ae15e3ccddaffe709e01d20bf59a9e8a14714d",
+                "url": "https://api.github.com/repos/kumwe/conversion/zipball/e95d5633722929e77b73005f8c44cfe4d99ac8c3",
+                "reference": "e95d5633722929e77b73005f8c44cfe4d99ac8c3",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-deprecation-rules": "^2.0",
+                "phpstan/phpstan-strict-rules": "^2.0",
+                "squizlabs/php_codesniffer": "^4.0"
             },
             "type": "library",
             "autoload": {
@@ -39,7 +45,7 @@
                 "issues": "https://github.com/kumwe/conversion/issues",
                 "source": "https://github.com/kumwe/conversion"
             },
-            "time": "2026-08-28T19:47:48+00:00"
+            "time": "2026-09-07T19:04:45+00:00"
         }
     ],
     "packages-dev": [

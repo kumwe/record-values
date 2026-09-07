@@ -1,15 +1,22 @@
 {
-    "schema": "kumwe-public-api/v1",
+    "schema": "kumwe-package-public-api/v1",
     "package": "kumwe/record-values",
-    "release": "0.1.0",
+    "release": "0.1.1",
     "namespace": "Kumwe\\Record\\Value\\",
-    "symbols": [
-        {
-            "name": "Kumwe\\Record\\Value\\ClientAssertedInstant",
+    "symbols": {
+        "Kumwe\\Record\\Value\\ClientAssertedInstant": {
+            "stability": "stable",
+            "file": "src/ClientAssertedInstant.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -17,13 +24,13 @@
                             "type": "DateTimeImmutable",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "fromPortableString",
+                "fromPortableString": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -31,41 +38,50 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "Kumwe\\Record\\Value\\ClientAssertedInstant"
                 },
-                {
-                    "name": "toPortableString",
+                "toPortableString": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "capturedAt",
+            },
+            "properties": {
+                "capturedAt": {
+                    "static": false,
                     "type": "DateTimeImmutable",
                     "readonly": true
                 }
-            ],
-            "constants": [
-                "INSTANT_FORMAT"
-            ]
+            },
+            "constants": {
+                "INSTANT_FORMAT": {
+                    "type": null
+                }
+            }
         },
-        {
-            "name": "Kumwe\\Record\\Value\\ProtectedRecordValue",
+        "Kumwe\\Record\\Value\\ProtectedRecordValue": {
+            "stability": "stable",
+            "file": "src/ProtectedRecordValue.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -73,27 +89,34 @@
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "toStorage",
+                "toStorage": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Value\\RecordValueGuard",
+        "Kumwe\\Record\\Value\\RecordValueGuard": {
+            "stability": "stable",
+            "file": "src/RecordValueGuard.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "assertValue",
+            "methods": {
+                "assertValue": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -101,27 +124,27 @@
                             "type": "mixed",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "depth",
                             "type": "int",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "nodes",
                             "type": "int",
                             "optional": true,
                             "variadic": false,
-                            "reference": true
+                            "by_reference": true
                         }
                     ],
                     "return": "void"
                 },
-                {
-                    "name": "canonical",
+                "canonical": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -129,21 +152,28 @@
                             "type": "mixed",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "mixed"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Record\\Value\\ZonedDateTimeValue",
+        "Kumwe\\Record\\Value\\ZonedDateTimeValue": {
+            "stability": "stable",
+            "file": "src/ZonedDateTimeValue.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "fromStrings",
+            "methods": {
+                "fromStrings": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -151,38 +181,40 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "timezone",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "Kumwe\\Record\\Value\\ZonedDateTimeValue"
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "instant",
+            },
+            "properties": {
+                "instant": {
+                    "static": false,
                     "type": "DateTimeImmutable",
                     "readonly": true
                 },
-                {
-                    "name": "timezone",
+                "timezone": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         }
-    ]
+    },
+    "extension_points": [],
+    "digest_of": "src"
 }
