@@ -30,7 +30,7 @@ This candidate contains runtime implementation and package-owned tests. Publicat
         "owner": "kumwe/extension-sdk",
         "version_or_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
         "manifest_or_corpus": "resources/extraction/v1.json",
-        "sha256": "39f444e144b0a2b39cf82e7d0e4918ed5cb99cd97950f629fb25c0f995e11991"
+        "sha256": "5eff65a879d7781365038179e38b6f5b436303eab3a8319afce8d2b8fd059db9"
       }
     ],
     "examined_dependencies": [
@@ -90,7 +90,7 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       },
       {
         "path": "resources/test-ownership/v1.json",
-        "sha256": "701b06050f1cbb1c512265eb4c3f692b560184f7715968478e16545f6b446d79"
+        "sha256": "71207387869716ca02c411d56d6d47bbc1a1d1b48f9952afd212e354f1cd4c6c"
       }
     ],
     "intentionally_excluded": [
@@ -108,17 +108,26 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       {
         "old_owner": "app",
         "source_path": "src/BusinessRecord/Domain/RecordValueGuard.php",
-        "target_path": "src/RecordValueGuard.php"
+        "target_path": "src/RecordValueGuard.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessRecord/Domain/ClientAssertedInstant.php",
-        "target_path": "src/ClientAssertedInstant.php"
+        "target_path": "src/ClientAssertedInstant.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Value/ZonedDateTimeValue.php",
-        "target_path": "src/ZonedDateTimeValue.php"
+        "target_path": "src/ZonedDateTimeValue.php",
+        "extraction_kind": "whole_file"
+      },
+      {
+        "old_owner": "new-package-code",
+        "source_path": null,
+        "target_path": "src/ProtectedRecordValue.php",
+        "extraction_kind": "new_symbol"
       }
     ],
     "consumers": {
@@ -160,7 +169,9 @@ This candidate contains runtime implementation and package-owned tests. Publicat
           "testProtectedStorageDoesNotRetainCallerReferences",
           "testClientCaptureRejectsCalendarCoercionAndKeepsUtcPrecision"
         ],
-        "implementation_owner": "kumwe/record-values"
+        "implementation_owner": "kumwe/record-values",
+        "source_ownership": "new_package_tests",
+        "source_tests": []
       },
       {
         "path": "tests/Case/ZonedDateTimeValueTest.php",
@@ -168,7 +179,21 @@ This candidate contains runtime implementation and package-owned tests. Publicat
           "testCanonicalExportRoundTripsAtPortableAndFractionalBoundaries",
           "testSilentCalendarRepairAndOffsetOnlyZonesAreRefused"
         ],
-        "implementation_owner": "kumwe/record-values"
+        "implementation_owner": "kumwe/record-values",
+        "source_ownership": "moved_or_adapted",
+        "source_tests": [
+          {
+            "owner": "extension-sdk",
+            "baseline_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+            "path": "tests/Case/ZonedDateTimeValueTest.php",
+            "methods": [
+              "testCanonicalExportRoundTripsAtPortableAndFractionalBoundaries",
+              "testSilentCalendarRepairAndOffsetOnlyZonesAreRefused"
+            ],
+            "retained_methods": [],
+            "remove_whole_file": true
+          }
+        ]
       }
     ],
     "remain_in_app_or_consumer": [
@@ -224,17 +249,26 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       {
         "old_owner": "app",
         "source_path": "src/BusinessRecord/Domain/RecordValueGuard.php",
-        "target_path": "src/RecordValueGuard.php"
+        "target_path": "src/RecordValueGuard.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessRecord/Domain/ClientAssertedInstant.php",
-        "target_path": "src/ClientAssertedInstant.php"
+        "target_path": "src/ClientAssertedInstant.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessRecord/Value/ZonedDateTimeValue.php",
-        "target_path": "src/ZonedDateTimeValue.php"
+        "target_path": "src/ZonedDateTimeValue.php",
+        "extraction_kind": "whole_file"
+      },
+      {
+        "old_owner": "new-package-code",
+        "source_path": null,
+        "target_path": "src/ProtectedRecordValue.php",
+        "extraction_kind": "new_symbol"
       }
     ],
     "files_to_update": [
@@ -251,8 +285,17 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       "src/Spi/BusinessRecord/Value/ZonedDateTimeValue.php"
     ],
     "tests_to_remove": [
-      "tests/Case/NormalizationBoundaryTest.php",
-      "tests/Case/ZonedDateTimeValueTest.php"
+      {
+        "owner": "extension-sdk",
+        "baseline_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "path": "tests/Case/ZonedDateTimeValueTest.php",
+        "methods": [
+          "testCanonicalExportRoundTripsAtPortableAndFractionalBoundaries",
+          "testSilentCalendarRepairAndOffsetOnlyZonesAreRefused"
+        ],
+        "retained_methods": [],
+        "remove_whole_file": true
+      }
     ],
     "tests_to_retain_or_add": [
       "Host responsibility cases listed above",
