@@ -164,4 +164,18 @@ final class NormalizationBoundaryTest extends TestCase
         }
         $this->assertSame(true, $instant->toArray()['asserted_by_client'], 'Client claim remains explicit.');
     }
+    public function testClientCapturePropertyMatchesCanonicalUtcContract(): void
+    {
+        $instant = new ClientAssertedInstant(new \DateTimeImmutable('2024-02-29T12:30:00.123456+02:00'));
+        $this->assertSame(
+            'UTC',
+            $instant->capturedAt->getTimezone()->getName(),
+            'The public value uses UTC consistently.'
+        );
+        $this->assertSame(
+            '10:30:00.123456',
+            $instant->capturedAt->format('H:i:s.u'),
+            'Normalization preserves the instant.'
+        );
+    }
 }

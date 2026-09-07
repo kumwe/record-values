@@ -43,6 +43,8 @@ use InvalidArgumentException;
  */
 final readonly class ClientAssertedInstant
 {
+    /** UTC-normalized client claim; never a server authority timestamp. */
+    public DateTimeImmutable $capturedAt;
     /**
      * Canonical text form, which is also the grammar `fromPortableString()` reads back.
      *
@@ -81,9 +83,10 @@ final readonly class ClientAssertedInstant
      *
      * @since   2.0.0
      */
-    public function __construct(public DateTimeImmutable $capturedAt)
+    public function __construct(DateTimeImmutable $capturedAt)
     {
         $utc = $capturedAt->setTimezone(new DateTimeZone('UTC'));
+        $this->capturedAt = $utc;
         if (
             $utc < new DateTimeImmutable(self::EARLIEST)
             || $utc >= new DateTimeImmutable(self::LATEST)

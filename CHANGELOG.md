@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 - 2026-09-07
+
+- Normalize the public ClientAssertedInstant value to UTC at construction while preserving its microsecond instant and client-only provenance.
+- Add package-owned regression tests and refresh extraction handoff, dependency and release documentation.
+- Keep exact stable dependency requirements; grouped weekly update PRs re-run the package gate.
+
 ## 0.1.0 - 2026-09-07
 
 ### Added

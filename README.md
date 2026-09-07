@@ -8,4 +8,8 @@ Pure values and stateless normalization are constructed directly. No empty conta
 
 See [public API](docs/public-api.md), [architecture](docs/architecture.md), [integration](docs/integration.md) and [test ownership](docs/test-ownership.md).
 
-For candidate source verification, follow `docs/integration.md`. Run `composer check` after installing the explicit candidate toolchain. `composer clean-consumer` verifies the archive in a fresh no-dev classmap-authoritative consumer. License: Apache-2.0.
+For standalone verification, run `composer install` and `composer check`; see `docs/integration.md`. `composer clean-consumer` verifies the archive in a fresh no-dev classmap-authoritative consumer. License: Apache-2.0.
+
+Maintenance release: Normalize the public ClientAssertedInstant value to UTC at construction while preserving its microsecond instant and client-only provenance.
+
+Direct Kumwe dependencies use exact stable versions. Dependabot proposes grouped weekly Composer updates; review and merge only after the complete package gate passes. The downstream App consumes a verified exact release, never an unreviewed moving `latest` constraint.
