@@ -1,9 +1,11 @@
 {
-    "schema": "kumwe-service-map/v1",
+    "schema": "kumwe-package-service-map/v1",
     "package": "kumwe/record-values",
-    "provider": null,
+    "release": "0.1.1",
+    "config_provider": null,
+    "provider_absence_reason": "Values, contracts and stateless deterministic operations are constructed directly. Host ports are explicit inputs; no global context is captured.",
     "factories": [],
-    "aliases": [],
-    "lifetimes": [],
-    "provider_absence_reason": "Values, contracts and stateless deterministic operations are constructed directly. Host ports are explicit inputs; no global context is captured."
+    "aliases": {},
+    "delegators": [],
+    "configuration_keys": []
 }

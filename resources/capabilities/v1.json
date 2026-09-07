@@ -1,16 +1,30 @@
 {
-    "schema": "kumwe-capabilities/v1",
+    "schema": "kumwe-package-capabilities/v1",
     "package": "kumwe/record-values",
+    "release": "0.1.1",
+    "namespace": "Kumwe\\Record\\Value\\",
+    "responsibility": "Portable bounded record values, exact numeric normalization and temporal semantics.",
+    "non_responsibilities": [
+        "Database execution, persistence, transactions and App orchestration.",
+        "Authorization and tenant authority remain host supplied."
+    ],
     "capabilities": [
         {
             "id": "record-values.portable-semantics",
-            "responsibility": "Portable bounded record values, exact numeric normalization and temporal semantics.",
-            "implementation_owner": "kumwe/record-values",
+            "title": "Record Values portable semantics",
+            "description": "Portable bounded record values, exact numeric normalization and temporal semantics.",
+            "symbols": [
+                "Kumwe\\Record\\Value\\ClientAssertedInstant",
+                "Kumwe\\Record\\Value\\ProtectedRecordValue",
+                "Kumwe\\Record\\Value\\RecordValueGuard",
+                "Kumwe\\Record\\Value\\ZonedDateTimeValue"
+            ],
             "documentation": [
                 "docs/public-api.md",
                 "docs/architecture.md"
             ]
         }
     ],
-    "release_verified": false
+    "native_requirements": null,
+    "deprecations": []
 }
