@@ -1,16 +1,16 @@
 {
-  "schema": "kumwe-capabilities/v1",
-  "package": "kumwe/record-values",
-  "capabilities": [
-    {
-      "id": "record-values.portable-semantics",
-      "responsibility": "Portable bounded record values, exact numeric normalization and temporal semantics.",
-      "implementation_owner": "kumwe/record-values",
-      "documentation": [
-        "docs/public-api.md",
-        "docs/architecture.md"
-      ]
-    }
-  ],
-  "release_verified": false
+    "schema": "kumwe-capabilities/v1",
+    "package": "kumwe/record-values",
+    "capabilities": [
+        {
+            "id": "record-values.portable-semantics",
+            "responsibility": "Portable bounded record values, exact numeric normalization and temporal semantics.",
+            "implementation_owner": "kumwe/record-values",
+            "documentation": [
+                "docs/public-api.md",
+                "docs/architecture.md"
+            ]
+        }
+    ],
+    "release_verified": false
 }
