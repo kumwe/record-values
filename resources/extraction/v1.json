@@ -29,5 +29,5 @@
       "retained_responsibility": "App retains EncryptedEnvelope and all cryptographic authenticity, AAD and key lifecycle behavior."
     }
   ],
-  "release_blocked": true
+  "release_blocked": false
 }

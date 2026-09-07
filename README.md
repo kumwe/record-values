@@ -2,7 +2,7 @@
 
 Portable bounded record values, exact numeric normalization and temporal semantics.
 
-Canonical namespace: `Kumwe\Record\Value`. Requires PHP 8.5, 64-bit. This is a development extraction candidate; do not publish or adopt until the migration handoff and exact upstream release attestations are reviewed.
+Canonical namespace: `Kumwe\Record\Value`. Requires PHP 8.5, 64-bit. Version 0.1.0 is recorded for automatic publication after human rebase merge and the complete package gate. App adoption is a separate integration change.
 
 Pure values and stateless normalization are constructed directly. No empty container provider is registered. Services with real collaborators receive explicit factories when introduced.
 

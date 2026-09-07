@@ -1,6 +1,6 @@
 {
-  "status": "blocked",
-  "reason": "Source candidate checks do not establish immutable dependency release verification.",
+  "status": "ready",
+  "reason": "Version 0.1.0 is recorded with exact published stable upstream requirements. Publication verifies tag, source and dist identity; independent adoption evidence remains separate.",
   "dependencies": {
     "kumwe/conversion": {
       "version": "0.1.0",
