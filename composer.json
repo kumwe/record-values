@@ -80,7 +80,5 @@
       "/composer.candidate.json",
       "/composer.candidate.lock"
     ]
-  },
-  "minimum-stability": "stable",
-  "prefer-stable": true
+  }
 }
