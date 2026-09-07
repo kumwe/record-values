@@ -1,0 +1,42 @@
+{
+  "name": "kumwe/record-values",
+  "description": "Portable bounded record values, exact numeric normalization and temporal semantics.",
+  "type": "library",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/kumwe/record-values",
+  "require": {
+    "php": "^8.5",
+    "php-64bit": "*",
+    "ext-json": "*",
+    "kumwe/conversion": "0.1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12.0",
+    "phpstan/phpstan": "^2.1",
+    "squizlabs/php_codesniffer": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kumwe\\Record\\Value\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Kumwe\\Record\\Value\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "php tests/run.php",
+    "lint": "php tools/lint.php",
+    "analyse": "phpstan analyse --no-progress --memory-limit=1G",
+    "manifests": "php tools/manifests.php",
+    "check": [
+      "@lint",
+      "@test",
+      "@manifests"
+    ]
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
