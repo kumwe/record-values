@@ -1,7 +1,7 @@
 {
   "schema": "kumwe-release-dependencies/v1",
   "package": "kumwe/record-values",
-  "publication_allowed": false,
+  "publication_allowed": true,
   "dependencies": [
     {
       "package": "kumwe/conversion",
