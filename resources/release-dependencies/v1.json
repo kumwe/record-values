@@ -1,0 +1,13 @@
+{
+  "schema": "kumwe-release-dependencies/v1",
+  "package": "kumwe/record-values",
+  "publication_allowed": false,
+  "dependencies": [
+    {
+      "package": "kumwe/conversion",
+      "constraint": "0.1.0",
+      "independently_verified": false,
+      "attestation": null
+    }
+  ]
+}

@@ -26,20 +26,35 @@ final readonly class ProtectedRecordValue
         if ($storage === [] || array_is_list($storage)) {
             throw new \InvalidArgumentException('Protected record storage must be a non-empty map.');
         }
+        RecordValueGuard::assertValue($storage);
+        $this->assertOpaque($storage);
+        $detached = [];
         foreach ($storage as $key => $value) {
             if (!is_string($key)) {
                 throw new \InvalidArgumentException('Protected record storage requires string keys.');
             }
+            $detached[$key] = self::detach($value);
         }
-        $this->assertOpaque($storage);
-        RecordValueGuard::assertValue($storage);
-        $this->storage = $storage;
+        $this->storage = $detached;
     }
 
     /** @return array<string, mixed> Exact storage order/bytes supplied by the host. */
     public function toStorage(): array
     {
         return $this->storage;
+    }
+
+    /** Copy admitted JSON data without retaining caller-owned PHP references. */
+    private static function detach(mixed $value): mixed
+    {
+        if (!is_array($value)) {
+            return $value;
+        }
+        $copy = [];
+        foreach ($value as $key => $child) {
+            $copy[$key] = self::detach($child);
+        }
+        return $copy;
     }
 
     /** @param array<array-key, mixed> $storage */

@@ -1,6 +1,6 @@
 # Public API
 
-All values enforce the documented constructor invariants. Domain methods perform no I/O, own no transaction and make no authorization decisions. Immutable values are safe to share; host inputs and lookup ports must remain generation-stable for the duration of an operation. Exceptions and parameter detail appear below verbatim from the source contract.
+Constructor invariants, serialization, exceptions and method contracts follow. Values perform no I/O; host inputs must remain stable through each operation.
 
 ## Kumwe\Record\Value\RecordValueGuard
 

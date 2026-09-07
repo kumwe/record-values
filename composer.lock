@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0a99cde429633a664b91498ac740057",
+    "content-hash": "1990603b1f7948a235a45cd6fce16002",
     "packages": [
         {
             "name": "kumwe/conversion",
@@ -1893,8 +1893,11 @@
     "platform": {
         "php": "^8.5",
         "php-64bit": "*",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-mbstring": "*"
     },
-    "platform-dev": {},
+    "platform-dev": {
+        "ext-zip": "*"
+    },
     "plugin-api-version": "2.9.0"
 }
