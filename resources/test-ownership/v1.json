@@ -12,7 +12,9 @@
         "testProtectedStorageDoesNotRetainCallerReferences",
         "testClientCaptureRejectsCalendarCoercionAndKeepsUtcPrecision"
       ],
-      "implementation_owner": "kumwe/record-values"
+      "implementation_owner": "kumwe/record-values",
+      "source_ownership": "new_package_tests",
+      "source_tests": []
     },
     {
       "path": "tests/Case/ZonedDateTimeValueTest.php",
@@ -20,7 +22,21 @@
         "testCanonicalExportRoundTripsAtPortableAndFractionalBoundaries",
         "testSilentCalendarRepairAndOffsetOnlyZonesAreRefused"
       ],
-      "implementation_owner": "kumwe/record-values"
+      "implementation_owner": "kumwe/record-values",
+      "source_ownership": "moved_or_adapted",
+      "source_tests": [
+        {
+          "owner": "extension-sdk",
+          "baseline_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+          "path": "tests/Case/ZonedDateTimeValueTest.php",
+          "methods": [
+            "testCanonicalExportRoundTripsAtPortableAndFractionalBoundaries",
+            "testSilentCalendarRepairAndOffsetOnlyZonesAreRefused"
+          ],
+          "retained_methods": [],
+          "remove_whole_file": true
+        }
+      ]
     }
   ],
   "app_retains": [

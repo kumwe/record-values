@@ -20,6 +20,13 @@
       "owner": "extension-sdk",
       "source": "src/Spi/BusinessRecord/Value/ZonedDateTimeValue.php",
       "target": "src/ZonedDateTimeValue.php"
+    },
+    {
+      "owner": "new-package-code",
+      "source": null,
+      "target": "src/ProtectedRecordValue.php",
+      "extraction_kind": "new_symbol",
+      "retained_responsibility": "App retains EncryptedEnvelope and all cryptographic authenticity, AAD and key lifecycle behavior."
     }
   ],
   "release_blocked": true

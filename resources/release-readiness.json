@@ -1,0 +1,10 @@
+{
+  "status": "blocked",
+  "reason": "Source candidate checks do not establish immutable dependency release verification.",
+  "dependencies": {
+    "kumwe/conversion": {
+      "version": "0.1.0",
+      "attestation": null
+    }
+  }
+}
