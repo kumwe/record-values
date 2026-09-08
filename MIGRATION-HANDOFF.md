@@ -57,7 +57,7 @@ target:
   artifact_identity: "kumwe/record-values"
   canonical_namespace_or_abi: "Kumwe\\Record\\Value\\"
   branch: "fix/final-governed-dependencies"
-  pull_request: "https://github.com/kumwe/record-values/pull/6"
+  pull_request: "https://github.com/kumwe/record-values/pull/7"
 ownership:
   responsibility: "Portable bounded record values, exact numeric normalization and temporal semantics."
   non_responsibilities:
