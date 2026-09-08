@@ -1,9 +1,9 @@
 {
   "status": "ready",
-  "reason": "Release 0.1.2 records a coherent exact published upstream tuple. Package CI and the no-dev archive consumer must pass before publication; independent verification remains a separate adoption gate.",
+  "reason": "Release 0.1.3 selects published Conversion 0.1.4 with its v2 extraction handoff. Package and no-dev archive consumer gates remain required; independent artifact and dependency verification remain separate.",
   "dependencies": {
     "kumwe/conversion": {
-      "version": "0.1.3",
+      "version": "0.1.4",
       "attestation": null
     }
   },

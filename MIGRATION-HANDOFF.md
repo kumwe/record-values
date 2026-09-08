@@ -50,7 +50,7 @@ source:
       manifest_or_corpus: "resources/extraction/v1.json"
       sha256: "5eff65a879d7781365038179e38b6f5b436303eab3a8319afce8d2b8fd059db9"
   examined_dependencies:
-    - "kumwe/conversion 0.1.3; independent release attestation not asserted"
+    - "kumwe/conversion 0.1.4; independent release attestation not asserted"
   active_related_pull_requests: []
 target:
   repository: "https://github.com/kumwe/record-values"
@@ -79,13 +79,13 @@ ownership:
   public_manifests:
     -
       path: "resources/public-api/v1.json"
-      sha256: "88ac79c3b668e080fc79adb1880fe2d5678ab0c1438e66f24d81453a1b7a0af9"
+      sha256: "9a3becb0ad1751cce08be8a7f39b3b2ad0e57519bd293156cccbdcdf7ba788b1"
     -
       path: "resources/capabilities/v1.json"
-      sha256: "e18de2da03c4dab7fca182779086631057a8a5ae75719f14e0d40c7590661160"
+      sha256: "9d69952dcc85e4a283eec5aaade79fd1eef185c2dbf51f228029033680119d22"
     -
       path: "resources/service-map/v1.json"
-      sha256: "80cc2cb97b0cecb58546687d08da93b0bf5df47f9caecfe2b6a240ce62bf244d"
+      sha256: "2bcdc2922b04a248efddf0ea5ed2ffc7c3e738975579efb7dfde6ca84d05f1bc"
     -
       path: "resources/test-ownership/v1.json"
       sha256: "843a739040638f4bcc14cc7932826ac1b23aa8eb0ba503d3a441ec77e6031703"
@@ -233,9 +233,9 @@ documentation:
   integration_or_consumer: "docs/integration.md"
   examples:
     - "examples/consumer.php"
-  changelog_record: "CHANGELOG.md / 0.1.2"
+  changelog_record: "CHANGELOG.md / 0.1.3"
 release_expectations:
-  version_policy: "SemVer maintenance release 0.1.2 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption."
+  version_policy: "SemVer maintenance release 0.1.3 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption."
   expected_artifact_types:
     - "Composer source zip"
   required_checks:
@@ -308,7 +308,7 @@ decisions:
   - "No host authority or persistence moves into the package."
   - "See CHARTER.md for explicit dependency amendments; no release approval is inferred."
 blockers:
-  - "The 0.1.2 readiness candidate requires maintainer review and merge. Version 0.1.1 has already been published."
+  - "The 0.1.3 dependency successor requires maintainer review and merge. Version 0.1.2 has already been published."
   - "Independent verification of the final maintenance release and its complete dependency closure remains a separate task before App adoption."
 ---
 
@@ -389,10 +389,18 @@ are listed separately; the adoption review must also resolve dynamically compose
 
 ## Dependency readiness update — 0.1.2
 
-The 0.1.1 release is published. This candidate uses `kumwe/conversion 0.1.3`.
+The 0.1.1 release is published. This candidate uses `kumwe/conversion 0.1.4`.
 The Composer install and no-dev archive consumer resolve the complete transitive graph; the readiness
 regression gate prevents its direct dependency records from drifting again. Null attestation coordinates
 remain an explicit absence of independent verification, not a completed adoption claim.
 
 Maintainer merge, final release publication and independent artifact/dependency verification remain
 required before downstream adoption. No App implementation or integration changes are included.
+
+## Conversion dependency handoff — 0.1.3
+
+Conversion 0.1.4 is published and carries the v2 package handoff missing from the prior selected
+release. This successor updates the exact requirement and evidence coordinates without changing
+Record Values runtime behavior. Version 0.1.2 remains an unchanged historical release. The full
+package and clean no-dev archive consumer gate must pass on this candidate and again on its
+rebased release commit; independent artifact and dependency verification remain separate.

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.3
+
+- Select published Conversion 0.1.4, which carries the v2 extraction handoff required for the
+  coordinated downstream dependency train; preserve the existing 0.1.2 release.
+- Align dependency evidence coordinates and successor manifest/handoff identities. No runtime
+  or public signature changes; all behavior, boundary, conformance and archive gates remain required.
+
 ## 0.1.2
 
 - Align exact dependency pins and release-readiness records with a coherent published Composer graph.
