@@ -34,6 +34,7 @@
     "manifests": "php tools/manifests.php",
     "check": [
       "composer validate --strict",
+      "@dependencies:check",
       "@lint",
       "@architecture",
       "@test",
@@ -58,7 +59,11 @@
       "bash tools/test-release-dependencies.sh",
       "bash tools/test-package-dependencies.sh"
     ],
-    "governance": "php tools/verify-governance.php"
+    "governance": "php tools/verify-governance.php",
+    "dependencies:check": [
+      "bash tools/check-dependency-readiness.sh",
+      "bash tools/test-dependency-readiness.sh"
+    ]
   },
   "config": {
     "sort-packages": true

@@ -1,10 +1,12 @@
 {
   "status": "ready",
-  "reason": "Version 0.1.0 is recorded with exact published stable upstream requirements. Publication verifies tag, source and dist identity; independent adoption evidence remains separate.",
+  "reason": "Release 0.1.2 records a coherent exact published upstream tuple. Package CI and the no-dev archive consumer must pass before publication; independent verification remains a separate adoption gate.",
   "dependencies": {
     "kumwe/conversion": {
-      "version": "0.1.0",
+      "version": "0.1.3",
       "attestation": null
     }
-  }
+  },
+  "integration_status": "awaiting-independent-release-verification",
+  "required_followup": "After maintainer merge and publication, independently verify this exact release and its dependency closure before adopting it in a downstream integration train."
 }

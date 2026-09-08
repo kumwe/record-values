@@ -79,13 +79,13 @@ ownership:
   public_manifests:
     -
       path: "resources/public-api/v1.json"
-      sha256: "6fab299747de56aebe5ef01d42f6cc1fe9f8f21b2780e60378638bf5da8bad96"
+      sha256: "88ac79c3b668e080fc79adb1880fe2d5678ab0c1438e66f24d81453a1b7a0af9"
     -
       path: "resources/capabilities/v1.json"
-      sha256: "e329f9f8bda9efcc90ec91d73fb967948f7e72c137a3b313256fab4e65dc3fcd"
+      sha256: "e18de2da03c4dab7fca182779086631057a8a5ae75719f14e0d40c7590661160"
     -
       path: "resources/service-map/v1.json"
-      sha256: "5612f766f9fc014ac2b13ffcd56622105f06f433c226ef55e81e5259d2b056ff"
+      sha256: "80cc2cb97b0cecb58546687d08da93b0bf5df47f9caecfe2b6a240ce62bf244d"
     -
       path: "resources/test-ownership/v1.json"
       sha256: "843a739040638f4bcc14cc7932826ac1b23aa8eb0ba503d3a441ec77e6031703"
@@ -233,9 +233,9 @@ documentation:
   integration_or_consumer: "docs/integration.md"
   examples:
     - "examples/consumer.php"
-  changelog_record: "CHANGELOG.md / 0.1.1"
+  changelog_record: "CHANGELOG.md / 0.1.2"
 release_expectations:
-  version_policy: "SemVer maintenance release 0.1.1 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption."
+  version_policy: "SemVer maintenance release 0.1.2 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption."
   expected_artifact_types:
     - "Composer source zip"
   required_checks:
@@ -308,7 +308,7 @@ decisions:
   - "No host authority or persistence moves into the package."
   - "See CHARTER.md for explicit dependency amendments; no release approval is inferred."
 blockers:
-  - "The 0.1.1 maintenance candidate requires maintainer review and merge. Version 0.1.0 has already been published."
+  - "The 0.1.2 readiness candidate requires maintainer review and merge. Version 0.1.1 has already been published."
   - "Independent verification of the final maintenance release and its complete dependency closure remains a separate task before App adoption."
 ---
 
@@ -317,7 +317,7 @@ blockers:
 ## Migration/implementation summary
 
 The published 0.1.0 package owns the portable source listed in the machine inventory.
-This 0.1.1 maintenance candidate completes immutable input snapshots, current release
+The published 0.1.1 maintenance release completes immutable input snapshots, current release
 metadata and consumer-readable governance records. App adoption is a separate phase.
 
 ## Public API and responsibility
@@ -386,3 +386,13 @@ The consumer inventory was recomputed against App 24ecf956423c18933e824b43cea1bf
 by searching tracked PHP, JSON, YAML, XML, JavaScript and TypeScript for the historical
 fully qualified symbols and their escaped string forms. Configuration and fixtures
 are listed separately; the adoption review must also resolve dynamically composed names.
+
+## Dependency readiness update — 0.1.2
+
+The 0.1.1 release is published. This candidate uses `kumwe/conversion 0.1.3`.
+The Composer install and no-dev archive consumer resolve the complete transitive graph; the readiness
+regression gate prevents its direct dependency records from drifting again. Null attestation coordinates
+remain an explicit absence of independent verification, not a completed adoption claim.
+
+Maintainer merge, final release publication and independent artifact/dependency verification remain
+required before downstream adoption. No App implementation or integration changes are included.
