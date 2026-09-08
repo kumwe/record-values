@@ -50,13 +50,13 @@ source:
       manifest_or_corpus: "resources/extraction/v1.json"
       sha256: "5eff65a879d7781365038179e38b6f5b436303eab3a8319afce8d2b8fd059db9"
   examined_dependencies:
-    - "kumwe/conversion 0.1.4; independent release attestation not asserted"
+    - "kumwe/conversion 0.1.5; independent release attestation not asserted"
   active_related_pull_requests: []
 target:
   repository: "https://github.com/kumwe/record-values"
   artifact_identity: "kumwe/record-values"
   canonical_namespace_or_abi: "Kumwe\\Record\\Value\\"
-  branch: "fix/verified-conversion-dependency"
+  branch: "fix/final-governed-dependencies"
   pull_request: "https://github.com/kumwe/record-values/pull/6"
 ownership:
   responsibility: "Portable bounded record values, exact numeric normalization and temporal semantics."
@@ -79,13 +79,13 @@ ownership:
   public_manifests:
     -
       path: "resources/public-api/v1.json"
-      sha256: "9a3becb0ad1751cce08be8a7f39b3b2ad0e57519bd293156cccbdcdf7ba788b1"
+      sha256: "ca6e82ea1697041424ce2644b5fa0566c805d60da2f8d36ada2c19b16756b8b3"
     -
       path: "resources/capabilities/v1.json"
-      sha256: "9d69952dcc85e4a283eec5aaade79fd1eef185c2dbf51f228029033680119d22"
+      sha256: "fa79ef590b02bae4f958bbbd8544e9a1f7a271cde45d2f2bac761e6a01b4308c"
     -
       path: "resources/service-map/v1.json"
-      sha256: "2bcdc2922b04a248efddf0ea5ed2ffc7c3e738975579efb7dfde6ca84d05f1bc"
+      sha256: "b266081c33d866630f97b49b5e164eb090f0c54811a426031f9a4456f3fed111"
     -
       path: "resources/test-ownership/v1.json"
       sha256: "843a739040638f4bcc14cc7932826ac1b23aa8eb0ba503d3a441ec77e6031703"
@@ -212,6 +212,7 @@ native_cpp: null
 php_extension: null
 tests:
   moved_or_added:
+    - "tools/schema-validator/verify.cjs: complete canonical manifest and handoff schemas with 12 rejection fixtures"
     - "tests/Case/NormalizationBoundaryTest.php (testExactNumbersNullAndCanonicalMapOrder, testCanonicalCallEnforcesWholeTreeBudget, testProtectedStorageAdapterPreservesExactRepresentation, testProtectedStorageCannotBypassAggregateStorageBounds, testProtectedStorageDoesNotRetainCallerReferences, testClientCaptureRejectsCalendarCoercionAndKeepsUtcPrecision, testClientCapturePropertyMatchesCanonicalUtcContract); provenance: resources/test-ownership/v1.json"
     - "tests/Case/ZonedDateTimeValueTest.php (testCanonicalExportRoundTripsAtPortableAndFractionalBoundaries, testSilentCalendarRepairAndOffsetOnlyZonesAreRefused); provenance: resources/test-ownership/v1.json"
   remain_in_app_or_consumer:
@@ -233,9 +234,9 @@ documentation:
   integration_or_consumer: "docs/integration.md"
   examples:
     - "examples/consumer.php"
-  changelog_record: "CHANGELOG.md / 0.1.3"
+  changelog_record: "CHANGELOG.md / 0.1.4"
 release_expectations:
-  version_policy: "SemVer maintenance release 0.1.3 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption."
+  version_policy: "SemVer maintenance release 0.1.4 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption."
   expected_artifact_types:
     - "Composer source zip"
   required_checks:
@@ -308,7 +309,7 @@ decisions:
   - "No host authority or persistence moves into the package."
   - "See CHARTER.md for explicit dependency amendments; no release approval is inferred."
 blockers:
-  - "The 0.1.3 dependency successor requires maintainer review and merge. Version 0.1.2 has already been published."
+  - "The 0.1.4 schema/dependency successor requires maintainer review and merge. Version 0.1.3 is already published."
   - "Independent verification of the final maintenance release and its complete dependency closure remains a separate task before App adoption."
 ---
 
@@ -389,7 +390,7 @@ are listed separately; the adoption review must also resolve dynamically compose
 
 ## Dependency readiness update — 0.1.2
 
-The 0.1.1 release is published. This candidate uses `kumwe/conversion 0.1.4`.
+The 0.1.1 release is published. This candidate uses `kumwe/conversion 0.1.5`.
 The Composer install and no-dev archive consumer resolve the complete transitive graph; the readiness
 regression gate prevents its direct dependency records from drifting again. Null attestation coordinates
 remain an explicit absence of independent verification, not a completed adoption claim.
@@ -404,3 +405,5 @@ release. This successor updates the exact requirement and evidence coordinates w
 Record Values runtime behavior. Version 0.1.2 remains an unchanged historical release. The full
 package and clean no-dev archive consumer gate must pass on this candidate and again on its
 rebased release commit; independent artifact and dependency verification remain separate.
+
+The 0.1.4 successor selects the published schema-valid dependency tuple: `kumwe/conversion 0.1.5`. All complete authoritative schemas and twelve refusal cases are mandatory source/release checks. Earlier releases remain unchanged. Runtime/API behavior is preserved, and App/core integration remains a separate later step.

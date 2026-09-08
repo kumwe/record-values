@@ -8,7 +8,7 @@
     "php": "^8.5",
     "php-64bit": "*",
     "ext-json": "*",
-    "kumwe/conversion": "0.1.4",
+    "kumwe/conversion": "0.1.5",
     "ext-mbstring": "*"
   },
   "require-dev": {
@@ -34,6 +34,7 @@
     "manifests": "php tools/manifests.php",
     "check": [
       "composer validate --strict",
+      "@schemas",
       "@dependencies:check",
       "@lint",
       "@architecture",
@@ -63,7 +64,8 @@
     "dependencies:check": [
       "bash tools/check-dependency-readiness.sh",
       "bash tools/test-dependency-readiness.sh"
-    ]
+    ],
+    "schemas": "node tools/schema-validator/verify.cjs"
   },
   "config": {
     "sort-packages": true
