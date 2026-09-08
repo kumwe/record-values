@@ -56,8 +56,8 @@ target:
   repository: "https://github.com/kumwe/record-values"
   artifact_identity: "kumwe/record-values"
   canonical_namespace_or_abi: "Kumwe\\Record\\Value\\"
-  branch: "codex/extraction-readiness-20260907"
-  pull_request: "https://github.com/kumwe/record-values/pull/3"
+  branch: "fix/verified-conversion-dependency"
+  pull_request: "https://github.com/kumwe/record-values/pull/6"
 ownership:
   responsibility: "Portable bounded record values, exact numeric normalization and temporal semantics."
   non_responsibilities:
