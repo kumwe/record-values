@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb58d6f23ad7e3d1323d91bf56df5624",
+    "content-hash": "8fe70c3f534a7c7f85faca3801dc41ad",
     "packages": [
         {
             "name": "kumwe/conversion",
-            "version": "v0.1.4",
+            "version": "v0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kumwe/conversion.git",
-                "reference": "61309523a58949e9d842c42e23f7d428a2b5ced2"
+                "reference": "b291f3a31314644fd88150dc9a9e911fe0617fe7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kumwe/conversion/zipball/61309523a58949e9d842c42e23f7d428a2b5ced2",
-                "reference": "61309523a58949e9d842c42e23f7d428a2b5ced2",
+                "url": "https://api.github.com/repos/kumwe/conversion/zipball/b291f3a31314644fd88150dc9a9e911fe0617fe7",
+                "reference": "b291f3a31314644fd88150dc9a9e911fe0617fe7",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
                 "issues": "https://github.com/kumwe/conversion/issues",
                 "source": "https://github.com/kumwe/conversion"
             },
-            "time": "2026-09-08T16:23:16+00:00"
+            "time": "2026-09-08T16:42:56+00:00"
         }
     ],
     "packages-dev": [

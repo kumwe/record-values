@@ -1,9 +1,9 @@
 {
   "status": "ready",
-  "reason": "Release 0.1.3 selects published Conversion 0.1.4 with its v2 extraction handoff. Package and no-dev archive consumer gates remain required; independent artifact and dependency verification remain separate.",
+  "reason": "Release 0.1.4 selects the corrected published v2 schema-valid dependency tuple and enforces complete authoritative schemas before publication. Independent final artifact verification remains separate.",
   "dependencies": {
     "kumwe/conversion": {
-      "version": "0.1.4",
+      "version": "0.1.5",
       "attestation": null
     }
   },

@@ -5,7 +5,7 @@
   "dependencies": [
     {
       "package": "kumwe/conversion",
-      "constraint": "0.1.4",
+      "constraint": "0.1.5",
       "independently_verified": false,
       "attestation": null
     }
